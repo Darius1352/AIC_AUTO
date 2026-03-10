@@ -12,6 +12,9 @@ public class AIC_AUTO extends LinearOpMode {
     private DcMotorEx leftRear;
     private DcMotorEx rightFront;
     private DcMotorEx rightRear;
+    private DcMotorEx intakeMotor;
+    //private DcMotorEx intakeMotor2;
+
 
     @Override
     public void runOpMode() {
@@ -19,6 +22,9 @@ public class AIC_AUTO extends LinearOpMode {
         leftRear = hardwareMap.get(DcMotorEx.class, "leftRear");
         rightFront = hardwareMap.get(DcMotorEx.class, "rightFront");
         rightRear = hardwareMap.get(DcMotorEx.class, "rightRear");
+
+        intakeMotor = hardwareMap.get(DcMotorEx.class, "intakeMotor");
+        //intakeMotor2 = hardwareMap.get(DcMotorEx.class, "intakeMotor2");
 
         //leftFront.setDirection(DcMotorSimple.Direction.REVERSE);
         //leftRear.setDirection(DcMotorSimple.Direction.REVERSE);
@@ -46,7 +52,7 @@ public class AIC_AUTO extends LinearOpMode {
 
             sleep(1000);
 
-            leftFront.setPower(0);
+            outtake();
 
             sleep(15000);
 
@@ -65,6 +71,13 @@ public class AIC_AUTO extends LinearOpMode {
             telemetry.addLine("Finished");
             telemetry.update();
         }
+
+    }
+
+    private void outtake(){
+
+        intakeMotor.setPower(-0.5);
+        //intakeMotor2.setPower(-0.5);
     }
 
 }
