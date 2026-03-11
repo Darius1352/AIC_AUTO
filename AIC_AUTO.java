@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.hardware.DcMotorEx;
 
 @Autonomous(name = "AIC_AUTO")
 public class AIC_AUTO extends LinearOpMode {
-
+    //Pozitie de start : jos centru, orientat spre stanga
     private DcMotorEx leftFront;
     private DcMotorEx leftRear;
     private DcMotorEx rightFront;
