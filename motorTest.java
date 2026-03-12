@@ -10,46 +10,52 @@ public class motorTest extends LinearOpMode {
 
     @Override
     public void runOpMode() {
+
         DcMotorEx leftFront = hardwareMap.get(DcMotorEx.class, "leftFront");
         DcMotorEx leftRear = hardwareMap.get(DcMotorEx.class, "leftRear");
         DcMotorEx rightFront = hardwareMap.get(DcMotorEx.class, "rightFront");
         DcMotorEx rightRear = hardwareMap.get(DcMotorEx.class, "rightRear");
 
-        leftFront.setDirection(DcMotorSimple.Direction.REVERSE);
-        leftRear.setDirection(DcMotorSimple.Direction.REVERSE);
-        rightFront.setDirection(DcMotorSimple.Direction.FORWARD);
-        rightRear.setDirection(DcMotorSimple.Direction.FORWARD);
+        
 
         waitForStart();
+
         while (opModeIsActive()) {
+
             if (gamepad1.square) {
-                leftFront.setPower(0.7);
+                leftFront.setPower(0.5);
                 telemetry.addData("Running Motor: ", "leftFront");
-            } else {
+            } 
+            else {
                 leftFront.setPower(0);
             }
 
             if (gamepad1.cross) {
-                leftRear.setPower(0.7);
+                leftRear.setPower(0.5);
                 telemetry.addData("Running Motor: ", "leftRear");
-            } else {
+            } 
+            else {
                 leftRear.setPower(0);
             }
 
             if (gamepad1.triangle) {
-                rightFront.setPower(0.7);
+                rightFront.setPower(0.5);
                 telemetry.addData("Running Motor: ", "rightFront");
-            } else {
+            } 
+            else {
                 rightFront.setPower(0);
             }
 
             if (gamepad1.circle) {
-                rightRear.setPower(0.7);
+                rightRear.setPower(0.5);
                 telemetry.addData("Running Motor: ", "rightRear");
-            } else {
+            } 
+            else {
                 rightRear.setPower(0);
             }
+
             telemetry.update();
+
         }
     }
 }
