@@ -7,11 +7,14 @@ import com.qualcomm.robotcore.hardware.DcMotorEx;
 
 @Autonomous(name = "AIC_AUTO")
 public class AIC_AUTO extends LinearOpMode {
+
     //Pozitie de start : jos centru, orientat spre stanga
+
     private DcMotorEx leftFront;
     private DcMotorEx leftRear;
     private DcMotorEx rightFront;
     private DcMotorEx rightRear;
+    
     private DcMotorEx intakeMotor;
     //private DcMotorEx intakeMotor2;
 
@@ -46,13 +49,13 @@ public class AIC_AUTO extends LinearOpMode {
             telemetry.addLine("Started");
             telemetry.update();
 
-            sleep(12000);
+            sleep(14000);
 
-            leftFront.setPower(0.25);
+            outtake();
 
             sleep(1000);
 
-            outtake();
+            stopOuttake();
 
             sleep(15000);
 
@@ -80,4 +83,8 @@ public class AIC_AUTO extends LinearOpMode {
         //intakeMotor2.setPower(-0.5);
     }
 
+    private void stopOuttake(){
+        intakeMotor.setPower(0);
+        //intakeMotor2.setPower(0);
+    }
 }
