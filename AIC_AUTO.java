@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 
-@Autonomous(name = "AIC_AUTO")
+@Autonomous(name = "AiCitizens_AUTO")
 public class AIC_AUTO extends LinearOpMode {
 
     //Pozitie de start : jos centru, orientat spre stanga
@@ -51,11 +51,13 @@ public class AIC_AUTO extends LinearOpMode {
 
             sleep(14000);
 
-            outtake();
+            intakeMotor.setPower(-0.5);
+            //intakeMotor2.setPower(-0.5);
 
             sleep(1000);
 
-            stopOuttake();
+            intakeMotor.setPower(0);
+            //intakeMotor2.setPower(0);
 
             sleep(12000);
 
@@ -77,13 +79,4 @@ public class AIC_AUTO extends LinearOpMode {
 
     }
 
-    private void outtake(){
-        intakeMotor.setPower(-0.5);
-        //intakeMotor2.setPower(-0.5);
-    }
-
-    private void stopOuttake(){
-        intakeMotor.setPower(0);
-        //intakeMotor2.setPower(0);
-    }
 }
