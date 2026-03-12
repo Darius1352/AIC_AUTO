@@ -57,7 +57,7 @@ public class AIC_AUTO extends LinearOpMode {
 
             stopOuttake();
 
-            sleep(15000);
+            sleep(12000);
 
             leftFront.setPower(0.5);
             leftRear.setPower(-0.5);
@@ -78,7 +78,6 @@ public class AIC_AUTO extends LinearOpMode {
     }
 
     private void outtake(){
-
         intakeMotor.setPower(-0.5);
         //intakeMotor2.setPower(-0.5);
     }
